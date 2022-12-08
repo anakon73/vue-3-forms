@@ -6,5 +6,7 @@ import '@vue/runtime-core'
 export {}
 
 declare module '@vue/runtime-core' {
-  export interface GlobalComponents {}
+  export interface GlobalComponents {
+    BaseInput: typeof import('./src/components/BaseInput.vue')['default']
+  }
 }
