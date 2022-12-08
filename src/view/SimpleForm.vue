@@ -1,3 +1,36 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
 
-<template></template>
+const categories = ref([
+  'sustainability',
+  'nature',
+  'animal welfare',
+  'housing',
+  'education',
+  'food',
+  'community',
+])
+const event = ref({
+  category: '',
+  title: '',
+  description: '',
+  location: '',
+  pets: 1,
+  extras: {
+    catering: false,
+    music: false,
+  },
+})
+</script>
+
+<template>
+  <div class="mb-8">
+    <h3 class="text-[19px] font-bold mb-5">Name & describe your event</h3>
+    <BaseInput class="mb-4" v-model="event.title" label="Title" type="text" />
+    <BaseInput v-model="event.description" label="Description" type="text" />
+  </div>
+  <div>
+    <h3 class="text-[19px] font-bold mb-5">Where is your event?</h3>
+    <BaseInput v-model="event.location" label="Location" type="text" />
+  </div>
+</template>
