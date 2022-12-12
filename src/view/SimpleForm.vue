@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const categories = ref([
+const categories = [
   'sustainability',
   'nature',
   'animal welfare',
@@ -9,7 +9,7 @@ const categories = ref([
   'education',
   'food',
   'community',
-])
+]
 const event = ref({
   category: '',
   title: '',
@@ -24,6 +24,13 @@ const event = ref({
 </script>
 
 <template>
+  <div class="mb-4">
+    <BaseSelect
+      label="Category"
+      :options="categories"
+      v-model="event.category"
+    />
+  </div>
   <div class="mb-8">
     <h3 class="text-[19px] font-bold mb-5">Name & describe your event</h3>
     <BaseInput class="mb-4" v-model="event.title" label="Title" type="text" />
