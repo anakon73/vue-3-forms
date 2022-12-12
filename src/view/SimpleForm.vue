@@ -36,8 +36,17 @@ const event = ref({
     <BaseInput class="mb-4" v-model="event.title" label="Title" type="text" />
     <BaseInput v-model="event.description" label="Description" type="text" />
   </div>
-  <div>
+  <div class="mb-8">
     <h3 class="text-[19px] font-bold mb-5">Where is your event?</h3>
     <BaseInput v-model="event.location" label="Location" type="text" />
+  </div>
+  <div>
+    <h3 class="text-[19px] font-bold mb-5">Extras</h3>
+    <BaseCheckbox
+      class="mb-2"
+      label="Catering"
+      v-model="event.extras.catering"
+    />
+    <BaseCheckbox label="Live music" v-model="event.extras.music" />
   </div>
 </template>

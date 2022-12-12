@@ -1,22 +1,32 @@
 <script setup lang="ts">
 type Props = {
-  modelValue: boolean
   label: string
+
+  modelValue: boolean
 }
-const { modelValue, label } = defineProps<Props>()
+const { label, modelValue } = defineProps<Props>()
 const emits = defineEmits(['update:modelValue'])
 
 const checked = (event: Event) => {
   if (event.target instanceof HTMLInputElement) {
     const {
-      target: { value },
+      target: { checked },
     } = event
-    emits('update:modelValue', value)
+    emits('update:modelValue', checked)
   }
 }
 </script>
 
 <template>
-  <input type="checkbox" v-model="modelValue" @change="checked" />
-  <label v-if="label">{{ label }}</label>
+  <div class="flex items-center">
+    <input
+      class="mr-2"
+      type="checkbox"
+      :checked="modelValue"
+      @change="checked"
+    />
+    <label class="text-sm font-medium text-gray-500 mb-[1px]" v-if="label">{{
+      label
+    }}</label>
+  </div>
 </template>
