@@ -8,5 +8,8 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BaseInput: typeof import('./src/components/BaseInput.vue')['default']
+    BaseSelect: typeof import('./src/components/BaseSelect.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
   }
 }
