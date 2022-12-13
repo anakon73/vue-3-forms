@@ -55,13 +55,11 @@ const petOptions = [
   </div>
   <div>
     <h3 class="text-[19px] font-bold mb-5">Are pets allowed?</h3>
-    <BaseRadio
-      class="mb-1"
-      label="Yes"
-      :value="1"
+    <BaseRadioGroup
       v-model="event.pets"
       name="pets"
+      :options="petOptions"
+      vertical
     />
-    <BaseRadio label="No" :value="0" v-model="event.pets" name="pets" />
   </div>
 </template>
