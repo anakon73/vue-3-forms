@@ -21,6 +21,10 @@ const event = ref({
     music: false,
   },
 })
+const petOptions = [
+  { label: 'Yes', value: 1 },
+  { label: 'No', value: 0 },
+]
 </script>
 
 <template>

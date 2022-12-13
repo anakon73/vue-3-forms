@@ -11,7 +11,7 @@ const emits = defineEmits(['update:modelValue'])
 </script>
 
 <template>
-  <div class="flex items-center">
+  <span class="inline-flex items-center">
     <input
       type="radio"
       :checked="modelValue === value"
@@ -20,5 +20,5 @@ const emits = defineEmits(['update:modelValue'])
       v-bind="$attrs"
     />
     <label class="text-gray-500 text-xs ml-1" v-if="label">{{ label }}</label>
-  </div>
+  </span>
 </template>
