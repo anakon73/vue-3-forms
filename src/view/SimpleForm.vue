@@ -12,6 +12,7 @@ const categories = [
   'community',
 ]
 const event = ref({
+  id: new Date(),
   category: '',
   title: '',
   description: '',
@@ -27,7 +28,19 @@ const petOptions = [
   { label: 'No', value: 0 },
 ]
 
-const sendForm = () => {}
+const sendForm = () => {
+  axios
+    .post(
+      'https://my-json-server.typicode.com/anakon73/vue-3-forms/events',
+      event.value
+    )
+    .then((response) => {
+      console.log('Response', response)
+    })
+    .catch((err) => {
+      console.log('Error', err)
+    })
+}
 </script>
 
 <template>
