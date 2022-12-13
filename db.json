@@ -2,6 +2,7 @@
   "events": [
     {
       "id": 1,
+      "location": "Meow Town",
       "category": "animal welfare",
       "title": "Frenz of bunz",
       "description": "🐰 an frenz",
