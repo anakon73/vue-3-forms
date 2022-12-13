@@ -49,4 +49,15 @@ const event = ref({
     />
     <BaseCheckbox label="Live music" v-model="event.extras.music" />
   </div>
+  <div>
+    <h3 class="text-[19px] font-bold mb-5">Are pets allowed?</h3>
+    <BaseRadio
+      class="mb-1"
+      label="Yes"
+      :value="1"
+      v-model="event.pets"
+      name="pets"
+    />
+    <BaseRadio label="No" :value="0" v-model="event.pets" name="pets" />
+  </div>
 </template>
